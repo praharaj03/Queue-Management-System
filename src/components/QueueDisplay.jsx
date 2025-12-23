@@ -1,3 +1,6 @@
+import { FaUserMinus } from "react-icons/fa";
+import { FaUserCheck } from "react-icons/fa";
+
 function QueueDisplay({ queue, onUpdateStatus, onRemove }) {
   const getStatusColor = (status) => {
     switch (status) {
@@ -11,7 +14,7 @@ function QueueDisplay({ queue, onUpdateStatus, onRemove }) {
         return "var(--text)";
     }
   };
-  
+
   queue.map((customer) => console.log(customer.name));
 
   return (
@@ -35,27 +38,28 @@ function QueueDisplay({ queue, onUpdateStatus, onRemove }) {
               </div>
               <div className="actions">
                 {customer.status === "waiting" && (
-                  <span
+                  <button
                     className="serve-btn"
                     onClick={() => onUpdateStatus(customer.id, "serving")}
                   >
                     Serve
-                  </span>
+                  </button>
                 )}
                 {customer.status === "serving" && (
-                  <span
+                  <button
                     className="complete-btn"
                     onClick={() => onUpdateStatus(customer.id, "completed")}
                   >
-                    Serve
-                  </span>
+                    <FaUserCheck />
+                    Complete
+                  </button>
                 )}
                 <button
                   className="remove-btn"
                   onClick={() => onRemove(customer.id)}
                 >
+                  <FaUserMinus />
                   {" "}
-                  remove
                 </button>
               </div>
             </div>

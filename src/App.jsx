@@ -35,6 +35,11 @@ export default function App() {
           onRemove={removeFromQueue}
         />
       </main>
+      <footer>
+        <p>Made with love and joy by @praharaj</p>
+      </footer>
     </div>
+
+    
   );
 }
