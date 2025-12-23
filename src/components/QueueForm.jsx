@@ -5,7 +5,7 @@ export default function QueueForm({ onAdd }) {
   const [service, setService] = useState("");
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault(); //to prevent the default submission behaviour of the form
     //validations
     if (!name.trim() || !service.trim()) return;
     console.log(name);
